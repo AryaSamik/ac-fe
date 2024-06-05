@@ -8,6 +8,7 @@
 navbar {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 navbar a{
@@ -15,4 +16,5 @@ navbar a{
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   color: white;
+  margin: 1rem;
 }

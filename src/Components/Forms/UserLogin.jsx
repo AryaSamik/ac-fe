@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 
-export default function LoginForm(){
+export default function UserLoginForm(){
 
     let [formData, setFormData] = useState({
         email:"",
@@ -17,6 +17,9 @@ export default function LoginForm(){
     let data={};
     let handleSubmit = async (event) => {
         event.preventDefault();
+        let btn = document.querySelector("button");
+        btn.textContent = "Logging In...";
+        btn.disabled = true;
         try{
             const response = await fetch('https://ac-1.onrender.com/api/user/login', {
                 method: 'POST',
@@ -32,11 +35,12 @@ export default function LoginForm(){
               alert(data.message);
               data = data.response;
             //   console.log(data);
-            navigate(`/profile/${data._id}`, {state: data});
+            navigate(`/user/${data._id}`, {state: data});
         } catch(error) {
             alert(error.message);
         }
-       
+        btn.textContent = "Login";
+        btn.disabled = false;
     }
 
     return(

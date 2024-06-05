@@ -21,6 +21,9 @@ export default function SignUpForm(){
     let data;
     const handleSubmit = async (event) => {
         event.preventDefault();
+        let btn = document.querySelector("button");
+        btn.textContent = "Signing Up...";
+        btn.disabled = true;
         try {
           const response = await fetch('https://ac-1.onrender.com/api/user', {
             method: 'POST',
@@ -35,10 +38,12 @@ export default function SignUpForm(){
           }
           console.log(data.response);
           alert(data.message);
-          navigate("/login");
+          navigate("/userlogin");
         } catch (error) {
           alert(error.message);
         }
+        btn.textContent = "Submit";
+        btn.disabled = false;
       };
 
     return (

@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 
-export default function User({state}){
+export default function User(){
 
     const location = useLocation();
     const data = location.state;
@@ -20,6 +20,9 @@ export default function User({state}){
             <div><b>Email</b>: {data.email}</div>
             <br></br>
             <div><b>Date Of Birth</b>: {data.dateofbirth.slice(0,10)}</div>
+            <br></br>
+            <br></br>
+            <button>Show Alumnii</button>
             <br></br>
             <br></br>
             <button onClick={handleClick}>Logout</button>
