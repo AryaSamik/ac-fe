@@ -7,10 +7,16 @@
 
 #navbar {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
+#navbar .links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 #navbar a{
   border: whitesmoke 0.1rem solid;
   border-radius: 0.5rem;

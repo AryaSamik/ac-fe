@@ -11,7 +11,7 @@ export default function Navbar(){
             <hr></hr>
             <br></br>
             </div>
-            <div>
+            <div className="links">
                 <Link to="/">Home</Link>
                 <Link to="/signup">Signup</Link>
                 <Link to="/userlogin">User Login</Link>
