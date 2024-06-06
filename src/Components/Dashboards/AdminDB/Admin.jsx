@@ -27,13 +27,15 @@ export default function Admin(){
     }
 
     let handleBtnClick = () => {
-        navigate("/");
+        navigate("/adminlogin");
     }
 
     return(
         <div>
             {/* {logger()} */}
-            <h3>Admin DashBoard</h3>
+            <h2>Admin DashBoard</h2>
+            <hr></hr>
+            <br></br>
             <div><b>Admin Id</b>: {data.adminDetails.adminid}</div>
             {/* <br></br> */}
             {/* <div><b>Key</b>: {data.key}</div> */}

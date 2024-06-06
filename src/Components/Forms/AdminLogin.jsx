@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 export default function AdminLogin(){
 
@@ -44,6 +45,7 @@ export default function AdminLogin(){
 
     return (
         <div>
+            <Navbar/>
             <h2>Admin Login</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="adminid">Admin Id</label>

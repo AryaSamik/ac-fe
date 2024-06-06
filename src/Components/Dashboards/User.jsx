@@ -9,12 +9,30 @@ export default function User(){
 
     let navigate = useNavigate();
     const handleClick = (event) => {
-        navigate("/");
+        navigate("/userlogin");
+    }
+
+    const handleShowAlumnii = async (event) => {
+        let alumBtn = document.getElementById("alum");
+        alumBtn.textContent = "Opening..."
+        alumBtn.disabled=true;
+        let data;
+        try{
+            let response = await fetch('https://ac-1.onrender.com/api/user?key=giveaccess');
+            data = await response.json();
+            navigate(`/user/${data._id}/alumnii`, {state: data});
+        } catch(error) {
+            console.log(error);
+        }
+        alumBtn.textContent="Show Alumnii";
+        alumBtn.disabled = false;
     }
 
     return(
         <div>
-            <h3>User DashBoard</h3>
+            <h2>User DashBoard</h2>
+            <hr></hr>
+            <br></br>
             <div><b>Name</b>: {data.firstname+" "+((data.middlename)?data.middlename:"")+" "+data.lastname}</div>
             <br></br>
             <div><b>Email</b>: {data.email}</div>
@@ -22,7 +40,7 @@ export default function User(){
             <div><b>Date Of Birth</b>: {data.dateofbirth.slice(0,10)}</div>
             <br></br>
             <br></br>
-            <button>Show Alumnii</button>
+            <button onClick={handleShowAlumnii} id="alum">Show Alumnii</button>
             <br></br>
             <br></br>
             <button onClick={handleClick}>Logout</button>

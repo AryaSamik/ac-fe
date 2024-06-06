@@ -1,10 +1,24 @@
+import { Link } from "react-router-dom"
+
 export default function Navbar(){
     return (
-        <navbar>
-            <a href="/adminlogin">Admin Login</a>
-            <a href='/userlogin'> User Login </a>
-            <a href='/signup'> Signup </a>
-            <a href='/'>Home</a>
-        </navbar>
+        <div id="navbar">
+            <div>
+            <hr></hr>
+            <h1>
+                Alum Central
+            </h1>
+            <hr></hr>
+            <br></br>
+            </div>
+            <div>
+                <Link to="/">Home</Link>
+                <Link to="/signup">Signup</Link>
+                <Link to="/userlogin">User Login</Link>
+                <Link to="/adminlogin">Admin Login</Link>
+            </div>
+            <br></br>
+            <br></br>            
+        </div>
     )
 }

@@ -1,5 +1,6 @@
 import {useState} from "react"
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 export default function SignUpForm(){
     let [formData, setFormData] = useState({
@@ -36,7 +37,7 @@ export default function SignUpForm(){
           if (!data.response) {
             throw new Error(data.message);
           }
-          console.log(data.response);
+          // console.log(data.response);
           alert(data.message);
           navigate("/userlogin");
         } catch (error) {
@@ -48,6 +49,7 @@ export default function SignUpForm(){
 
     return (
         <div>
+          <Navbar/>
           <form onSubmit={handleSubmit}>
             <h2>Registration Form</h2>
             <label htmlFor="firstname">First Name</label>

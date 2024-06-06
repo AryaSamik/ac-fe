@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 export default function UserLoginForm(){
 
@@ -45,6 +46,7 @@ export default function UserLoginForm(){
 
     return(
         <div>
+            <Navbar/>
             <form onSubmit={handleSubmit}>
                 <h2>Login</h2>
                 <label htmlFor="email">Email</label>

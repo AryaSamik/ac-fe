@@ -5,13 +5,13 @@
   text-align: center;
 }
 
-navbar {
+#navbar {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
-navbar a{
+#navbar a{
   border: whitesmoke 0.1rem solid;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
