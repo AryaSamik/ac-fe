@@ -5,6 +5,8 @@ export default function Alumnii(){
     const location = useLocation();
     const data = location.state;
 
+    let navigate = useNavigate();
+
     return(
         <div>
            <h2>Alumnii Page</h2>
@@ -23,6 +25,9 @@ export default function Alumnii(){
                 ))
             }
            </ul>
+           <br></br>
+           <br></br>
+           <button onClick={() => navigate(-1)}>Back</button>
         </div>
     )
 }
