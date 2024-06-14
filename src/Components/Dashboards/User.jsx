@@ -16,11 +16,11 @@ export default function User(){
         let alumBtn = document.getElementById("alum");
         alumBtn.textContent = "Opening..."
         alumBtn.disabled=true;
-        let data;
+        let allUsers;
         try{
             let response = await fetch('https://ac-1.onrender.com/api/user?key=giveaccess');
-            data = await response.json();
-            navigate(`/user/${data._id}/alumnii`, {state: data});
+            allUsers = await response.json();
+            navigate(`/user/${data._id}/alumnii`, {state: allUsers});
         } catch(error) {
             console.log(error);
         }
